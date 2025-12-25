@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- Imagen del producto: al pulsarla se abren los detalles -->
+    <ImageView
+        android:id="@+id/imgProducto"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@android:drawable/ic_menu_gallery"
+        android:contentDescription="Imagen del producto"
+        android:layout_marginEnd="16dp"
+        android:scaleType="centerCrop" />
+
+    <!-- Nombre del producto -->
+    <TextView
+        android:id="@+id/nombreProducto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Nombre Producto"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_gravity="center_vertical"
+        android:maxLines="2"
+        android:ellipsize="end" />
+
+    <!-- Precio del producto -->
+    <TextView
+        android:id="@+id/precioProducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Precio"
+        android:textSize="16sp"
+        android:textColor="@color/primary_color"
+        android:layout_gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp" />
+
+    <!-- Icono para agregar al carrito -->
+    <ImageView
+        android:id="@+id/imgEliminar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_menu_add"
+        android:contentDescription="Añadir al carrito"
+        android:layout_gravity="center_vertical"/>
+</LinearLayout>

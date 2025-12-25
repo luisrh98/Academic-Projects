@@ -1,0 +1,105 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Mensaje de carrito vacío -->
+    <LinearLayout
+        android:id="@+id/emptyCarritoMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+
+            android:contentDescription="Carrito vacío" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="El carrito está vacío"
+            android:textSize="18sp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:paddingTop="16dp" />
+    </LinearLayout>
+
+    <!-- RecyclerView para mostrar los productos en el carrito -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCarrito"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp"
+        tools:listitem="@android:layout/simple_gallery_item" />
+
+    <!-- TextView para mostrar el total -->
+    <TextView
+        android:id="@+id/txtTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total: 0.00€"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="?android:attr/colorAccent"
+        android:gravity="end"
+        android:padding="16dp" />
+
+    <!-- Botones -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:spacing="8dp"
+        android:paddingTop="16dp">
+
+        <Button
+            android:id="@+id/btnEscanearQR"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Escanear Código QR"
+            android:textAllCaps="true"
+            android:background="@color/primary_color"
+            android:drawableStart="@android:drawable/ic_menu_camera"
+            android:drawablePadding="8dp"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/btnVaciarCarrito"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Vaciar Carrito"
+            android:textAllCaps="true"
+            android:background="@color/primary_color"
+            android:drawableStart="@android:drawable/ic_menu_delete"
+            android:drawablePadding="8dp"
+            android:padding="12dp"
+            android:layout_marginStart="8dp" />
+
+        <Button
+            android:id="@+id/btnVolverCarrito"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Volver"
+            android:textAllCaps="true"
+            android:background="@color/primary_color"
+            android:drawableStart="@android:drawable/ic_menu_revert"
+            android:drawablePadding="8dp"
+            android:padding="12dp"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+</LinearLayout>
